@@ -2,7 +2,9 @@
 ##
 ## These Python classes provide a simple example of how Python classes can be implemented as 
 ## standalone Jython scripts.  I've even taken it a step further and have used knowledge gathered from
-## zetcode.com in order to build a Jython class (HL7ORUGui.py) which uses the Java Swing GUI library to implement the HL7RepClass.py script.
+## zetcode.com in order to build a Jython class (HL7ORUGui.py) which uses the Java Swing GUI library to 
+## implement the HL7RepClass.py script.
+## 
 ## This Python script will parse a HL7 ORU messages as input (first argument) and will produce a
 ## tab-delimited flat file as output (2nd argument) consisting of the following HL7 v 2.3.x fields.
 ## MSH-3, MSH-5, PV1-2, PID-3, PID-5, ORC-1, ORC-2, ORC-3
