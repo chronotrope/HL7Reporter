@@ -17,6 +17,7 @@
 ## standalone mode.  More info on how to do this can be found here:
 ## More info on packaging Jython standalone programs can be found here:
 ## http://goo.gl/idNmY
-## Another more advanced option is the One-Jar method http://goo.gl/lQMre .  However, this solution requires Java 1.6 and higher.
+## Another more advanced option is the One-Jar method http://goo.gl/lQMre .  However, this solution 
+## requires Java 1.6 and higher.
 ## This may be an issue in some enterprise environments where legacy Java apps may require workstations to use 
 ## an older version of the JRE such as Java 1.5.x.
