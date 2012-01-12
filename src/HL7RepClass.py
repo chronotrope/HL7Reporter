@@ -72,8 +72,7 @@ class ParseORUClass:
                 
                 
                 fileHandle.write(segRow)
-        ##fileHandle.write(self.inFile)
-         
+         fileHandle.close()         
          
     def printStuff(self):
          print "inFle = ", self.inFile
