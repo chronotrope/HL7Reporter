@@ -23,25 +23,32 @@ import sys
 
 global header
 global fileHandle
+
 class ParseORUClass:
     def __init__(self, inFile, outFile):
-         self.inFile = inFile
-         self.outFile = outFile
+	self.inFile = inFile
+	self.outFile = outFile
+	##self.inFile = self.inFile.replace("\\", "/")
+	##self.outFile = self.outFile.replace("\\", "/")
+	
+	
+	
+         
 
     def parseORU(self):
         f = file(self.inFile, 'r')
         fileHandle = open (self.outFile, 'w')
-        header = "MSH-3\tMSH-5\tPV1-2\tPID-3\tPID-5\tORC-1\tORC-2\tORC-3\n"
+        header = "MSH-3\tMSH-5\tPV1-2\tPID-3\tPID-5\tORC-1\tORC-2\tORC-3\tOBR-4\n"
+        print header
         fileHandle.write(header)
-        msgRow = [[],[],[],[],[], [], [],[]]
+        msgRow = [[],[],[],[],[], [], [],[],[]]
         for splitSeg in f.readlines():
 
             splitSeg  = splitSeg.split("|")
             if re.search("MSH", splitSeg[0]):
                 msgRow[0] = splitSeg[2]
                 msgRow[1] = splitSeg[4]
-                
-                
+                                
                 
                 ##print segRow
                 ##fileHandle.write(segRow)
@@ -62,17 +69,26 @@ class ParseORUClass:
                 ## ORC-3
                 orcThree = splitSeg[3].split("^")
                 msgRow[7] = orcThree[0]
+                
+                
+                ## Procedure code below:
+            if re.search("OBR", splitSeg[0]):
+                obrFour = splitSeg[4]
+                msgRow[8] = obrFour
                 segRow = (msgRow[0],"\t",msgRow[1],"\t", msgRow[2], "\t", msgRow[3],"\t",msgRow[4],"\t"+ msgRow[5],"\t",
-                  msgRow[6], "\t", msgRow[7],"\n")
+                msgRow[6], "\t", msgRow[7],  "\t", msgRow[8], "\n")
                 ##function below displays object type (ie. tuple)
-                print segRow.__class__
+                ##print segRow.__class__
                 print segRow
+                ##converts tuple to string
                 segRow = ''.join(segRow)
 
                 
                 
                 fileHandle.write(segRow)
-         fileHandle.close()         
+        fileHandle.close()
+        ##fileHandle.write(self.inFile)
+         
          
     def printStuff(self):
          print "inFle = ", self.inFile
@@ -81,6 +97,5 @@ class ParseORUClass:
 
 
         
-
 
 
