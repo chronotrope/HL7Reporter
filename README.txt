@@ -7,7 +7,7 @@
 ## 
 ## This Python script will parse a HL7 ORU messages as input (first argument) and will produce a
 ## tab-delimited flat file as output (2nd argument) consisting of the following HL7 v 2.3.x fields.
-## MSH-3, MSH-5, PV1-2, PID-3, PID-5, ORC-1, ORC-2, ORC-3
+## MSH-3, MSH-5, PV1-2, PID-3, PID-5, ORC-1, ORC-2, ORC-3, and OBR-4.
 ## This current version includes an the OO Python class (HL7RepClass.py) which includes the methods necessary to:
 ## Open the input file with the HL7 ORU messages as the first argument.
 ## Parse the input file for selected singleton HL7 fields.
