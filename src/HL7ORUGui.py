@@ -11,9 +11,13 @@ http://zetcode.com/tutorials/jythonswingtutorial/introduction/
 
 
 """
-
+import sys
+import os
+currPath = os.getcwd()
+## this way i can distribute the ExampleFileFilter java class in the /lib folder of the current working directory
+sys.path.append(currPath+'/lib')
 from java.awt import BorderLayout
-
+import ExampleFileFilter
 from javax.swing import BorderFactory
 from javax.swing import JFileChooser
 from javax.swing import JTextArea
@@ -86,9 +90,14 @@ class HL7GUIFrame(JFrame):
 
        print outputTextField.getText()
        chooseFile = JFileChooser()
+       filter = ExampleFileFilter()
+       filter.addExtension("txt")
+       filter.setDescription("txt HL7 input files")
+       chooseFile.setFileFilter(filter)
        
 
-       ret = chooseFile.showDialog(self.panel, "Choose file")
+       ##ret = chooseFile.showDialog(self.panel, "Choose file")
+       ret = chooseFile.showOpenDialog(self.panel)
 
        if ret == JFileChooser.APPROVE_OPTION:
            file = chooseFile.getSelectedFile()
