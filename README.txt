@@ -4,10 +4,15 @@
 ## standalone Jython scripts.  I've even taken it a step further and have used knowledge gathered from
 ## zetcode.com in order to build a Jython class (HL7ORUGui.py) which uses the Java Swing GUI library to 
 ## implement the HL7RepClass.py script.
-## 
+##
 ## This Python script will parse a HL7 ORU messages as input (first argument) and will produce a
 ## tab-delimited flat file as output (2nd argument) consisting of the following HL7 v 2.3.x fields.
 ## MSH-3, MSH-5, PV1-2, PID-3, PID-5, ORC-1, ORC-2, ORC-3, and OBR-4.
+## 
+## I've added new class (ExampleFileFilter) has been added for for Java 1.4.x-1.5.x versions.  
+## If you have Java 1.6.x and above, you can use the existing "FileNameExtensionFilter" class.  
+## The source code for this class = http://bit.ly/MWL1x3 from google code.  I've included the source (.java)
+## and the compiled class (compiled to Java 1.5) as well in the "/lib" directory
 ## This current version includes an the OO Python class (HL7RepClass.py) which includes the methods necessary to:
 ## Open the input file with the HL7 ORU messages as the first argument.
 ## Parse the input file for selected singleton HL7 fields.
