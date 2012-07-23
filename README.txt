@@ -1,4 +1,5 @@
 by Ruben Robles
+Welcome to to my proof of concept HL7 Reporter:
 
 These Python classes provide a simple example of how Python classes can be implemented as 
 standalone Jython scripts.  I've even taken it a step further and have used knowledge gathered from
