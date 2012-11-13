@@ -8,7 +8,7 @@ implement the HL7RepClass.py script.
 
 This Python script will parse a HL7 ORU messages as input (first argument) and will produce a
 tab-delimited flat file as output (2nd argument) consisting of the following HL7 v 2.3.x fields.
-MSH-3, MSH-5, PV1-2, PID-3, PID-5, ORC-1, ORC-2, ORC-3, and OBR-4.
+MSH-3, MSH-5, PV1-2, PID-3, PID-5, ORC-1, ORC-2, ORC-3, OBR-4, and OBR-7.
 
 I've added new class (ExampleFileFilter) for for compatibility with Java 1.4.x-1.5.x versions.  
 If you have Java 1.6.x and above, you can use the existing "FileNameExtensionFilter" class.  
